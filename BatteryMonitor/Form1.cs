@@ -15,6 +15,7 @@ namespace BatteryMonitor
         public Form1()
         {
             InitializeComponent();
+            Task.Delay(new TimeSpan(0, 0, 15)).ContinueWith(o => { closeApp(); });
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -28,6 +29,11 @@ namespace BatteryMonitor
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void closeApp()
         {
             Application.Exit();
         }
